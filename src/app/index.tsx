@@ -1,18 +1,54 @@
 import { StyleSheet, Text, TextInput, View, TouchableOpacity } from "react-native";
 import { Ionicons } from '@expo/vector-icons'
 import Colors from "@/constants/colors";
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
 import { useState } from "react";
 
 export default function Login() {
     const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
+
+    // mensagens
     const [EmailError, setEmailError] = useState('');
+    const [EmailSucesso, setEmailSucesso] = useState('');
+    const [SenhaError, setSenhaError] = useState('');
+    const [SenhaSucesso, setSenhaSucesso] = useState('');
 
     const handleValidarEmail = () => {
+
+        const emailAdmin = 'admin@gmail.com'
+        const senhaAdmin = 'admin123'
+
         if (email === '') {
-            setEmailError('Preencha o email');
+            setEmailError('Preencha o e-mail');
+            return
         }
+
+        if (email !== emailAdmin) {
+            setEmailError('O e-mail está incorreto!');
+            return
+        }
+
+        if (senha === '') {
+            setEmailError('');
+            setEmailSucesso('E-mail sucesso');
+            setSenhaError('Preencha a senha');
+            return
+        }
+
+        if (senha !== senhaAdmin) {
+            setSenhaError('Senha está incorreta!');
+            return
+        }
+
+        setSenhaError('');
+        setSenhaSucesso('Senha sucesso');
+
+        setTimeout(() => {
+            router.push("/profile/page")
+        }, 5000)
     }
+
     return (
         <View style={styles.container}>
 
@@ -31,13 +67,17 @@ export default function Login() {
                         placeholderTextColor={Colors.white}
                         placeholder="Digite seu e-mail" />
                     <Text style={{ color: Colors.redEspecial, fontSize: 16 }}>{EmailError}</Text>
+                    <Text style={{ color: Colors.green, fontSize: 16 }}>{EmailSucesso}</Text>
                 </View>
 
                 <View>
                     <Text style={styles.label}> Senha </Text>
                     <TextInput style={styles.input}
+                        value={senha} onChangeText={setSenha}
                         placeholderTextColor={Colors.white}
                         secureTextEntry placeholder="Digite sua senha" />
+                    <Text style={{ color: Colors.redEspecial, fontSize: 16 }}>{SenhaError}</Text>
+                    <Text style={{ color: Colors.green, fontSize: 16 }}>{SenhaSucesso}</Text>
                 </View>
 
                 <TouchableOpacity style={styles.button} onPress={handleValidarEmail}>

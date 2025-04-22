@@ -11,6 +11,10 @@ export default function Layout() {
                 name="cadastro/page"
                 options={{ headerShown: false }}
             />
+            <Stack.Screen
+                name="profile/page"
+                options={{ headerShown: false }}
+            />
         </Stack>
     )
 }
