@@ -18,7 +18,7 @@ export default function Profile() {
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <Image style={styles.avatar} src="https://github.com/gustavoguanabara.png" />
+                <Image style={styles.avatar} src="https://github.com/G10vanniMiranda.png" />
 
                 <Text style={styles.avatarText}>Profile</Text>
 
@@ -43,6 +43,7 @@ const styles = StyleSheet.create({
     avatar: {
         width: 50,
         height: 50,
+        backgroundColor: colors.purpleEspecial,
     },
     avatarText: {
         fontSize: 16,

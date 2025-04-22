@@ -46,7 +46,7 @@ export default function Login() {
 
         setTimeout(() => {
             router.push("/profile/page")
-        }, 5000)
+        }, 4000)
     }
 
     return (
