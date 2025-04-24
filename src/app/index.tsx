@@ -1,93 +1,32 @@
-import { StyleSheet, Text, TextInput, View, TouchableOpacity } from "react-native";
-import { Ionicons } from '@expo/vector-icons'
+import { StyleSheet, Text, TextInput, View, TouchableOpacity, Image, Pressable } from "react-native";
 import Colors from "@/constants/colors";
+import { IoCutSharp } from "react-icons/io5";
+import { GiHamburgerMenu } from "react-icons/gi";
 import { Link, router } from "expo-router";
-import { useState } from "react";
+import colors from "@/constants/colors";
 
-export default function Login() {
-    const [email, setEmail] = useState('');
-    const [senha, setSenha] = useState('');
-
-    // mensagens
-    const [EmailError, setEmailError] = useState('');
-    const [EmailSucesso, setEmailSucesso] = useState('');
-    const [SenhaError, setSenhaError] = useState('');
-    const [SenhaSucesso, setSenhaSucesso] = useState('');
-
-    const handleValidarEmail = () => {
-
-        const emailAdmin = 'admin@gmail.com'
-        const senhaAdmin = 'admin123'
-
-        if (email === '') {
-            setEmailError('Preencha o e-mail');
-            return
-        }
-
-        if (email !== emailAdmin) {
-            setEmailError('O e-mail está incorreto!');
-            return
-        }
-
-        if (senha === '') {
-            setEmailError('');
-            setEmailSucesso('E-mail sucesso');
-            setSenhaError('Preencha a senha');
-            return
-        }
-
-        if (senha !== senhaAdmin) {
-            setSenhaError('Senha está incorreta!');
-            return
-        }
-
-        setSenhaError('');
-        setSenhaSucesso('Senha sucesso');
-
-        setTimeout(() => {
-            router.push("/profile/page")
-        }, 4000)
-    }
-
+export default function Home() {
+    // const profile = "https://picsum.photos/seed/696/3000/2000"
+    // const banner = "/assets/baber/banner.png"
     return (
         <View style={styles.container}>
-
             <View style={styles.header}>
-                <Text style={styles.logoText}>
-                    Logo <Text style={{ color: Colors.purpleEspecial, fontSize: 22 }}>Supa</Text>
-                </Text>
-                <Text style={styles.slogan}> React Expo Mobile </Text>
-            </View>
-
-            <View style={styles.form}>
-                <View>
-                    <Text style={styles.label}> E-mail </Text>
-                    <TextInput style={styles.input}
-                        value={email} onChangeText={setEmail}
-                        placeholderTextColor={Colors.white}
-                        placeholder="Digite seu e-mail" />
-                    <Text style={{ color: Colors.redEspecial, fontSize: 16 }}>{EmailError}</Text>
-                    <Text style={{ color: Colors.green, fontSize: 16 }}>{EmailSucesso}</Text>
+                <View style={styles.logo}>
+                    <IoCutSharp style={styles.cutLogo} />
+                    <Text style={styles.cutText} >SHOP</Text>
                 </View>
-
-                <View>
-                    <Text style={styles.label}> Senha </Text>
-                    <TextInput style={styles.input}
-                        value={senha} onChangeText={setSenha}
-                        placeholderTextColor={Colors.white}
-                        secureTextEntry placeholder="Digite sua senha" />
-                    <Text style={{ color: Colors.redEspecial, fontSize: 16 }}>{SenhaError}</Text>
-                    <Text style={{ color: Colors.green, fontSize: 16 }}>{SenhaSucesso}</Text>
-                </View>
-
-                <TouchableOpacity style={styles.button} onPress={handleValidarEmail}>
-                    <Text style={styles.buttonText}>Entrar</Text>
-                </TouchableOpacity>
-
-                <Link href="/cadastro/page" style={styles.link} >
-                    <Text style={styles.linkText}>Ir para cadastro</Text>
-                </Link>
+                <Pressable style={styles.btnHeander}>
+                    <GiHamburgerMenu size={30} color="white" />
+                </Pressable>
             </View>
+            <View style={styles.searchContainer}></View>
+            <View style={styles.specialty}></View>
+
+            <Image
+                style={styles.image}
+                source={require('../../assets/images/banner.png')}
+            />
+
         </View>
 
     )
@@ -96,66 +35,38 @@ export default function Login() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 34,
-        backgroundColor: Colors.zinc
+        backgroundColor: Colors.black
     },
     header: {
-        paddingLeft: 14,
-        paddingRight: 14,
-        marginBottom: 50,
+        padding: 20,
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+        backgroundColor: "#1d1d1d"
     },
-    logoText: {
-        fontSize: 36,
-        fontWeight: 'bold',
-        color: Colors.grayEspecial3,
-        marginBottom: 8
+    logo: {
+        flexDirection: "row",
+        alignItems: "center",
+        backgroundColor: "black"
     },
-    slogan: {
-        fontSize: 32,
-        fontWeight: 'bold',
-        color: Colors.grayEspecial3,
-        marginBottom: 8
+    cutLogo: {
+        width: 40,
+        height: 40,
+        color: colors.purpleEspecial
     },
-    form: {
-        flex: 1,
-        marginTop: 20,
-        padding: 14,
-        backgroundColor: Colors.white,
-        borderTopLeftRadius: 20,
-        borderTopRightRadius: 20,
+    cutText: {
+        fontSize: 30,
+        fontWeight: "bold",
+        color: colors.purpleEspecial
     },
-    label: {
-        color: Colors.blackEpecial,
-        marginTop: 20,
-        fontSize: 16,
-    },
-    input: {
-        borderRadius: 10,
-        fontSize: 16,
-        paddingHorizontal: 16,
-        height: 60,
-        backgroundColor: Colors.purpleEspecial,
-    },
-    button: {
-        backgroundColor: Colors.green,
-        marginTop: 20,
-        padding: 16,
-        borderRadius: 10,
-    },
-    buttonText: {
-        letterSpacing: 1,
-        color: Colors.white,
-        fontSize: 16,
-        textAlign: 'center',
+    btnHeander: {
 
     },
-    link: {
-        width: '100%',
-        marginTop: 20,
-    },
-    linkText: {
-        fontSize: 18,
-        color: Colors.green,
+    searchContainer: {},
+    specialty: {},
+    image: {
+        width: "100%",
+        maxWidth: 500,
     }
 
 })
