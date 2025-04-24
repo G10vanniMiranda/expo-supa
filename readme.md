@@ -1,0 +1,1 @@
+### Projeto em EXPO com React Native e Expo Router

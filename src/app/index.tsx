@@ -27,12 +27,14 @@ export default function Home() {
             <View style={styles.searchContainer}>
                 <Text style={styles.searchText}>Olá, Giovanni!</Text>
                 <Text style={styles.searchText1}>Qui, 24 de Abril</Text>
+
                 <View style={styles.searchImputContainer}>
                     <TextInput style={styles.searchImput} placeholder="Buscar" placeholderTextColor="gray" />
                     <Pressable style={styles.btnSearch}>
                         <IoSearch size={30} color="white" />
                     </Pressable>
                 </View>
+
             </View>
 
             <View style={styles.specialty}>
@@ -119,8 +121,10 @@ const styles = StyleSheet.create({
     },
     searchImput: {
         width: "90%",
-        padding: 12,
+        padding: 9,
+        fontSize: 20,
         borderRadius: 10,
+        letterSpacing: 2,
         backgroundColor: colors.grayEspecial1
     },
     btnSearch: {
@@ -137,7 +141,7 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
     },
     specialtyText: {
-        gap: 10,
+        gap: 6,
         padding: 10,
         flexDirection: "row",
         alignItems: "center",
@@ -146,8 +150,9 @@ const styles = StyleSheet.create({
     },
     specialtyText1: {
         paddingLeft: 5,
-        fontSize: 12,
+        fontSize: 16,
         fontWeight: "bold",
+        letterSpacing: 1,
         color: colors.white,
     },
     image: {
