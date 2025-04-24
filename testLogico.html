@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <input id="name" type="text" placeholder="nome completo">
+        <p id="textNome">Precisa ter no minimo 8 caracteres: <span></span></p>
+
+        <input id="email" type="text" placeholder="digite o email" value="giovanni@gmail.com">
+        <input id="number" type="number" placeholder="digite o numero" value="1234">
+        <input id="password" type="password" placeholder="digite a senha" value="1234">
+        <p>Total de caracteres: <span></span></p>
+
+        <button>Enviar</button>
+    </form>
+
+    <style>
+        .error {
+            color: red;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .success {
+            color: green;
+        }
+    </style>
+
+    <script>
+
+        // declarar as variaveis
+        let name = document.getElementById('name');
+        let email = document.querySelector('#email'); //id, tag, class,
+        let number = document.querySelector('form input[type="number"]');
+        let password = document.querySelector('form input[type="password"]');
+
+        document.querySelector("button").disabled = true;
+
+        // criar as funções
+
+        let validarNome = document.querySelector("#name").onkeyup = () => {
+            let value = name.value.length
+
+            document.querySelector("#textNome span").innerHTML = value
+            if (value >= 8) {
+                name.style.color = "green";
+                document.querySelector("#textNome span").style.color = "green";
+                document.querySelector("#textNome span").style.fontWeight = "700";
+                document.querySelector("#textNome span").style.fontSize = "20px";
+                document.querySelector("button").disabled = false;
+            } else {
+                name.style.color = "red";
+                document.querySelector("#textNome span").classList.add("error");
+            }
+        }
+
+        // let validarPassword = document.querySelector("#password").onkeyup = () => {
+        //     let value = password.value.length
+        //     document.querySelector("span").innerHTML = value
+        //     if (value >= 8) {
+        //         password.style.color = "green";
+        //         return document.querySelector("button").disabled = false;
+        //     } else {
+        //         return password.style.color = "red";
+        //     }
+        // }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -34,6 +34,7 @@ export default function Cadastro() {
         }
 
         if (email === '') {
+            setNomeError('');
             setEmailError('Preencha o e-mail');
             return
         }
@@ -44,6 +45,7 @@ export default function Cadastro() {
         }
 
         if (senha === '') {
+            setEmailError('');
             setSenhaError('Preencha a senha');
             return
         }
@@ -53,11 +55,9 @@ export default function Cadastro() {
             return
         }
 
-        setNomeError('');
-        setNomeSucesso('Nome sucesso');
-        setEmailError('');
-        setEmailSucesso('E-mail sucesso');
         setSenhaError('');
+        setNomeSucesso('Nome sucesso');
+        setEmailSucesso('E-mail sucesso');
         setSenhaSucesso('Senha sucesso');
 
         setTimeout(() => {

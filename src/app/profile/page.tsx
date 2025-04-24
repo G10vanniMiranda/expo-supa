@@ -18,14 +18,14 @@ export default function Profile() {
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <Image style={styles.avatar} src="https://github.com/G10vanniMiranda.png" />
+                <Image style={styles.avatar} src="https://github.com/G10vanniMiranda.png" alt="Avatar" />
 
                 <Text style={styles.avatarText}>Profile</Text>
 
                 <TouchableOpacity onPress={handlePress} style={{ backgroundColor: 'red', width: 25, height: 25, borderRadius: 7 }} >
                     <Ionicons name="exit-outline" size={24} color="white" />
                 </TouchableOpacity>
-            </View>
+            </View>0
 
         </View>
     )
@@ -38,11 +38,15 @@ const styles = StyleSheet.create({
         backgroundColor: colors.zinc
     },
     header: {
-
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
     },
     avatar: {
         width: 50,
         height: 50,
+        borderRadius: 50,
         backgroundColor: colors.purpleEspecial,
     },
     avatarText: {
