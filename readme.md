@@ -1,4 +1,12 @@
-### Projeto em EXPO com React Native e Expo Router
+### Projeto em EXPO com React
+
+* TypeScript
+
+* Expo Router
+
+* Expo Media Query
+
+### Telas prontas
 
 * Tela de Login
 
@@ -15,3 +23,4 @@
 * Tela de Home
 
 <img src="./screens/home.jpg" alt="Print da Home" />
+

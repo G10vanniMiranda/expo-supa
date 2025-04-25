@@ -7,6 +7,7 @@ import { TbMoustache } from "react-icons/tb";
 import { Link, router } from "expo-router";
 import colors from "@/constants/colors";
 import React from "react";
+import CardItem from "./_components/cardItem";
 
 export default function Home() {
     // const profile = "https://picsum.photos/seed/696/3000/2000"
@@ -56,6 +57,12 @@ export default function Home() {
                 style={styles.image}
                 source={require('../../assets/images/banner.png')}
             />
+
+            <Text>Agendamentos</Text>
+
+            <View style={styles.containerCard}>
+                <CardItem imageUrl="../../assets/images/banner.png" title="" address="" />
+            </View>
 
         </View>
 
@@ -113,7 +120,7 @@ const styles = StyleSheet.create({
         color: colors.white
     },
     searchText1: {
-        fontSize: 18,
+        fontSize: 12,
         color: colors.white
     },
     searchImputContainer: {
@@ -162,6 +169,11 @@ const styles = StyleSheet.create({
         maxWidth: 500,
         borderRadius: 20,
         alignItems: 'center'
+    },
+    containerCard: {
+        flexDirection: "row",
+        flexWrap: "wrap",
+        width: "100%",
     }
 
 })
