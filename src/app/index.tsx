@@ -64,8 +64,11 @@ export default function Home() {
 
 const styles = StyleSheet.create({
     container: {
+        width: '100%',
+        height: '100%',
         flex: 1,
         alignItems: 'center',
+        overflow: 'hidden',
         backgroundColor: Colors.black
     },
     header: {
@@ -141,7 +144,6 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
     },
     specialtyText: {
-        gap: 6,
         padding: 10,
         flexDirection: "row",
         alignItems: "center",
@@ -150,7 +152,7 @@ const styles = StyleSheet.create({
     },
     specialtyText1: {
         paddingLeft: 5,
-        fontSize: 16,
+        fontSize: 12,
         fontWeight: "bold",
         letterSpacing: 1,
         color: colors.white,
