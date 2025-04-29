@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TextInput, View, TouchableOpacity, Image, Pressable, BackHandler } from "react-native";
+import { StyleSheet, Text, TextInput, View, TouchableOpacity, Pressable, BackHandler, Image } from "react-native";
 import Colors from "@/constants/colors";
 import { IoCutSharp } from "react-icons/io5";
 import { GiHamburgerMenu, GiRazorBlade } from "react-icons/gi";
@@ -12,6 +12,7 @@ import CardItem from "./_components/cardItem";
 export default function Home() {
     // const profile = "https://picsum.photos/seed/696/3000/2000"
     // const banner = "/assets/baber/banner.png"
+    var imageUrl = "../../assets/images/banner.png"
     return (
         <View style={styles.container}>
             <View style={styles.header}>
@@ -53,17 +54,19 @@ export default function Home() {
                 </View>
             </View>
 
-            <Image
-                style={styles.image}
-                source={require('../../assets/images/banner.png')}
-            />
+            <Image source={require(`../../assets/images/barber/banner.png`)} style={styles.imageBanner} />
 
             <Text>Agendamentos</Text>
 
             <View style={styles.containerCard}>
-                <CardItem imageUrl="../../assets/images/banner.png" title="" address="" />
+                <CardItem title="titulo" address="asdfasdf" views={10}
+                    image={<Image source={require(`../../assets/images/barber/02.png`)} style={styles.image} />} />
             </View>
 
+            <View style={styles.containerCard}>
+                <CardItem title="titulo" address="asdfasdf" views={10}
+                    image={<Image source={require(`../../assets/images/barber/02.png`)} style={styles.image} />} />
+            </View>
         </View>
 
     )
@@ -72,13 +75,15 @@ export default function Home() {
 const styles = StyleSheet.create({
     container: {
         width: '100%',
-        height: '100%',
+        height: 'auto',
         flex: 1,
         alignItems: 'center',
         overflow: 'hidden',
         backgroundColor: Colors.black
     },
     header: {
+        top: 0,
+        position: "sticky",
         width: '100%',
         padding: 20,
         flexDirection: "row",
@@ -165,10 +170,15 @@ const styles = StyleSheet.create({
         color: colors.white,
     },
     image: {
-        width: "92%",
+        width: "100%",
         maxWidth: 500,
         borderRadius: 20,
         alignItems: 'center'
+    },
+    imageBanner: {
+        width: "90%",
+        maxWidth: 500,
+        paddingHorizontal: 20
     },
     containerCard: {
         flexDirection: "row",
