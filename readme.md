@@ -22,5 +22,5 @@
 
 * Tela de Home
 
-<img src="./screens/home.jpg" alt="Print da Home" />
+<img src="./screens/home1.jpg" alt="Print da Home" />
 

@@ -9,6 +9,7 @@ export default {
   blackEpecial: '#141518',
   blackSecondary: '#1A1B1F',
   purpleEspecial: '#8162FF',
+  purpleTransaparent1: 'hsla(252, 100.00%, 69.20%, 0.27)',
   redEspecial: '#EF4444',
   grayEspecial1: '#26272B',
   grayEspecial2: '#4E525B',

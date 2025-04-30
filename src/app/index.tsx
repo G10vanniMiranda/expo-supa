@@ -58,14 +58,26 @@ export default function Home() {
 
             <Text>Agendamentos</Text>
 
-            <View style={styles.containerCard}>
-                <CardItem title="titulo" address="asdfasdf" views={10}
-                    image={<Image source={require(`../../assets/images/barber/02.png`)} style={styles.image} />} />
-            </View>
+            <View style={styles.Card}>
+                <View style={styles.CardItem}>
+                    <CardItem title="Vintage Barber" address="asdfasdf" views="5,0"
+                        image={<Image source={require(`../../assets/images/barber/cards/01.png`)} style={styles.image} />} />
+                </View>
 
-            <View style={styles.containerCard}>
-                <CardItem title="titulo" address="asdfasdf" views={10}
-                    image={<Image source={require(`../../assets/images/barber/02.png`)} style={styles.image} />} />
+                <View style={styles.CardItem}>
+                    <CardItem title="titulo" address="asdfasdf" views="4,7"
+                        image={<Image source={require(`../../assets/images/barber/cards/19.png`)} style={styles.image} />} />
+                </View>
+
+                <View style={styles.CardItem}>
+                    <CardItem title="titulo" address="asdfasdf" views="4,7"
+                        image={<Image source={require(`../../assets/images/barber/cards/20.png`)} style={styles.image} />} />
+                </View>
+
+                <View style={styles.CardItem}>
+                    <CardItem title="titulo" address="asdfasdf" views="4,7"
+                        image={<Image source={require(`../../assets/images/barber/cards/02.png`)} style={styles.image} />} />
+                </View>
             </View>
         </View>
 
@@ -171,6 +183,7 @@ const styles = StyleSheet.create({
     },
     image: {
         width: "100%",
+        height: 160,
         maxWidth: 500,
         borderRadius: 20,
         alignItems: 'center'
@@ -180,10 +193,18 @@ const styles = StyleSheet.create({
         maxWidth: 500,
         paddingHorizontal: 20
     },
-    containerCard: {
+    Card: {
+        gap: 10,
+        height: 600,
+        width: "100%",
         flexDirection: "row",
         flexWrap: "wrap",
-        width: "100%",
+        padding: 20,
+        justifyContent: "space-around"
+    },
+    CardItem: {
+        width: "45%",
+
     }
 
 })
