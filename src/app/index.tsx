@@ -2,12 +2,12 @@ import { StyleSheet, Text, TextInput, View, TouchableOpacity, Pressable, BackHan
 import Colors from "@/constants/colors";
 import { IoCutSharp } from "react-icons/io5";
 import { GiHamburgerMenu, GiRazorBlade } from "react-icons/gi";
+import { DrawerToggleButton } from "@react-navigation/drawer";
 import { IoSearch } from "react-icons/io5";
 import { TbMoustache } from "react-icons/tb";
-import { Link, router } from "expo-router";
 import colors from "@/constants/colors";
 import React from "react";
-import CardItem from "./_components/cardItem";
+import CardItem from "../_components/cardItem";
 
 export default function Home() {
     // const profile = "https://picsum.photos/seed/696/3000/2000"
@@ -22,7 +22,7 @@ export default function Home() {
                     <Text style={styles.cutText1} >BARBER</Text>
                 </View>
                 <Pressable style={styles.btnHeader}>
-                    <GiHamburgerMenu size={30} color="white" />
+                    <DrawerToggleButton tintColor="white" />
                 </Pressable>
             </View>
 
@@ -101,7 +101,9 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-between",
-        backgroundColor: "#1d1d1d"
+        backgroundColor: "#1d1d1d",
+        borderWidth: 1,
+        borderBottomColor: colors.purpleEspecial
     },
     logo: {
         flexDirection: "row",
